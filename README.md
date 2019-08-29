@@ -13,6 +13,10 @@ An experimental REST API test runner that consumes a postman export file (in
 JSON or JavaScript format), then runs each and every test item in the file in
 sequential order, or optionally, a single, named item from the test.
 
+## Installation
+
+  `npm install @byrdware/rester`
+
 ## Motivation
 
 Testing REST API's and microservices is tedious and time-consuming. Perhaps a
@@ -24,10 +28,6 @@ providing a simple tool, driven by an easily configured JSON/JavaScript file.
 Initially the format of this configuration file is simply a postman export
 file. I am currently reviewing Insomnia export files and planning support in
 a future release, pull requests are welcome.
-
-## Installation
-
-  `npm install @byrdware/rester`
 
 ## Usage
 
@@ -76,10 +76,15 @@ described here:
 
 [https://schema.getpostman.com/json/collection/v2.1.0/collection.json](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 
-
 ## Tests
 
   `npm test`
+
+or, alternatively:
+
+  `node test/www`
+  
+  `npm start`
 
 ## Contributing
 
