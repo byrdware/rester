@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "node bin/rester postman ./test/test-suite.js",
-    "test": "mocha --reporter spec"
+    "test": "mocha -R spec",
+    "cover": "node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec test/*-test.js"
   },
   "repository": {
     "type": "git",
@@ -44,9 +45,11 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.0",
+    "coveralls": "^3.0.6",
     "express": "~4.16.1",
     "http-errors": "^1.7.3",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.2.0",
     "uuid": "^3.3.3"
   }
 }
