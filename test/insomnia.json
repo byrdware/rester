@@ -1,0 +1,301 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2019-08-29T17:09:03.973Z",
+  "__export_source": "insomnia.desktop.app:v6.5.4",
+  "resources": [
+    {
+      "_id": "req_d309134a33c24beda695a30e8b427705",
+      "authentication": {},
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "id": "pair_88e170c59caa415893e4b93f8e8f3a2e",
+            "name": "api_key",
+            "value": "eCbIOXzA98jQAZXehfEoxeTuHvHV8emyG"
+          },
+          {
+            "id": "pair_e14af2b20fb1496898e65e27ed9baa02",
+            "name": "secret_key",
+            "value": "KFeT2FYBQPrlUytJWAYyIlDL6pwpaHlKS"
+          },
+          {
+            "id": "pair_3f90e383d19d45eeb890ee57fb27e820",
+            "name": "site",
+            "value": "coe-test.mybizowie.com"
+          },
+          {
+            "fileName": "",
+            "id": "pair_c92f1dcd956a47c099531d38228c3752",
+            "name": "request",
+            "type": "text",
+            "value": "{\"date_type\":\"created_timstamp\",\"begin_date\":\"1/1/2017\",\"end_date\":\"12/31/2017\",\"location_id\":2,\"retrieve_items\":true,\"status\":\"shipped\"}"
+          }
+        ]
+      },
+      "created": 1486062882283,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_58c1ff17134e4a598e75d571c8dcf918",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1496932797816,
+      "method": "POST",
+      "modified": 1498575537556,
+      "name": "Get Fulfillments",
+      "parameters": [],
+      "parentId": "wrk_6900a02787884e599cfe63f82dd07b80",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://coe-test.mybizowie.com/bz/api/fulfillment/get_fulfillments",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_6900a02787884e599cfe63f82dd07b80",
+      "created": 1486062742515,
+      "description": "",
+      "modified": 1497362415179,
+      "name": "Bizowie 3PL Endpoints",
+      "parentId": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_4222d84949f34f50a7ec612ee72961f1",
+      "authentication": {},
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "id": "pair_bca67d09fae14b00a3b9c01a1678043d",
+            "name": "api_key",
+            "value": "eCbIOXzA98jQAZXehfEoxeTuHvHV8emyG"
+          },
+          {
+            "id": "pair_d08e082b595f46b8b510db776301550b",
+            "name": "secret_key",
+            "value": "KFeT2FYBQPrlUytJWAYyIlDL6pwpaHlKS"
+          },
+          {
+            "id": "pair_8b80fb031e8f487387c054e8db433264",
+            "name": "site",
+            "value": "coe-test.mybizowie.com"
+          },
+          {
+            "id": "pair_506099f3ae3d4011922fec5d765ac990",
+            "name": "request",
+            "value": "{\"location_id\":\"2\", \"begin_created_date\": \"2017-01-01\", \"end_created_date\": \"2017-12-31\"}"
+          }
+        ]
+      },
+      "created": 1496932797766,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_bcb224f536b4490a9aefdd1b34b2a1dc",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1496932797766,
+      "method": "POST",
+      "modified": 1499352017823,
+      "name": "Get PO Lines",
+      "parameters": [],
+      "parentId": "wrk_6900a02787884e599cfe63f82dd07b80",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://coe-test.mybizowie.com/bz/api/purchase_orders/get_po_lines",
+      "_type": "request"
+    },
+    {
+      "_id": "req_27dcf49f629d459a8b090860fcacecc2",
+      "authentication": {},
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "id": "pair_bca67d09fae14b00a3b9c01a1678043d",
+            "name": "api_key",
+            "value": "eCbIOXzA98jQAZXehfEoxeTuHvHV8emyG"
+          },
+          {
+            "id": "pair_d08e082b595f46b8b510db776301550b",
+            "name": "secret_key",
+            "value": "KFeT2FYBQPrlUytJWAYyIlDL6pwpaHlKS"
+          },
+          {
+            "id": "pair_8b80fb031e8f487387c054e8db433264",
+            "name": "site",
+            "value": "coe-test.mybizowie.com"
+          },
+          {
+            "id": "pair_506099f3ae3d4011922fec5d765ac990",
+            "name": "request",
+            "value": "{\"to_location_id\": 2, \"begin_created_date\": \"2017-01-01\", \"end_created_date\": \"2017-12-31\"}"
+          }
+        ]
+      },
+      "created": 1498575505222,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_bcb224f536b4490a9aefdd1b34b2a1dc",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1491497840024.5,
+      "method": "POST",
+      "modified": 1498575579276,
+      "name": "Get Transfer Lines",
+      "parameters": [],
+      "parentId": "wrk_6900a02787884e599cfe63f82dd07b80",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://coe-test.mybizowie.com/bz/api/fulfillment/get_transfer_lines",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b1b5995834c34a49be8d5a8cc7231001",
+      "authentication": {},
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "id": "pair_bca67d09fae14b00a3b9c01a1678043d",
+            "name": "api_key",
+            "value": "eCbIOXzA98jQAZXehfEoxeTuHvHV8emyG"
+          },
+          {
+            "id": "pair_d08e082b595f46b8b510db776301550b",
+            "name": "secret_key",
+            "value": "KFeT2FYBQPrlUytJWAYyIlDL6pwpaHlKS"
+          },
+          {
+            "id": "pair_8b80fb031e8f487387c054e8db433264",
+            "name": "site",
+            "value": "coe-test.mybizowie.com"
+          },
+          {
+            "id": "pair_506099f3ae3d4011922fec5d765ac990",
+            "name": "request",
+            "value": "{\"transfer_number\":1191910, \"location_id\": 2, \"items_received\": [{\"sku\":\"60004-5x8\",\"quantity\":1}]}"
+          }
+        ]
+      },
+      "created": 1499994300266,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_bcb224f536b4490a9aefdd1b34b2a1dc",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1491497839974.5,
+      "method": "POST",
+      "modified": 1499994495371,
+      "name": "Transfer Receive",
+      "parameters": [],
+      "parentId": "wrk_6900a02787884e599cfe63f82dd07b80",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://coe-test.mybizowie.com/bz/api/fulfillment/receive_transfer",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e0a46d929d8d477bad3e670c4b903cdd",
+      "authentication": {},
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "id": "pair_bca67d09fae14b00a3b9c01a1678043d",
+            "name": "api_key",
+            "value": "eCbIOXzA98jQAZXehfEoxeTuHvHV8emyG"
+          },
+          {
+            "id": "pair_d08e082b595f46b8b510db776301550b",
+            "name": "secret_key",
+            "value": "KFeT2FYBQPrlUytJWAYyIlDL6pwpaHlKS"
+          },
+          {
+            "id": "pair_8b80fb031e8f487387c054e8db433264",
+            "name": "site",
+            "value": "coe-test.mybizowie.com"
+          },
+          {
+            "id": "pair_506099f3ae3d4011922fec5d765ac990",
+            "name": "request",
+            "value": "{\"purchase_order_number\":1191910, \"location_id\": 2, \"items_received\": [{\"sku\":\"60004-5x8\",\"quantity\":1}]}"
+          }
+        ]
+      },
+      "created": 1500144373883,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_bcb224f536b4490a9aefdd1b34b2a1dc",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1491497839924.5,
+      "method": "POST",
+      "modified": 1500144988034,
+      "name": "Purchase Order Receive",
+      "parameters": [],
+      "parentId": "wrk_6900a02787884e599cfe63f82dd07b80",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://coe-test.mybizowie.com/bz/api/purchase_orders/receive",
+      "_type": "request"
+    },
+    {
+      "_id": "env_ec89439a5fa8478387ed1a9b08d7dc2c",
+      "color": null,
+      "created": 1486063007335,
+      "data": {},
+      "dataPropertyOrder": null,
+      "isPrivate": false,
+      "metaSortKey": 1567098543981,
+      "modified": 1497362415176,
+      "name": "Base Environment",
+      "parentId": "wrk_6900a02787884e599cfe63f82dd07b80",
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_84090ed42d9c462bad5ea10ba0368862",
+      "cookies": [],
+      "created": 1486063007370,
+      "modified": 1497402576633,
+      "name": "Default Jar",
+      "parentId": "wrk_6900a02787884e599cfe63f82dd07b80",
+      "_type": "cookie_jar"
+    }
+  ]
+}
