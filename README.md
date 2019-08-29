@@ -53,6 +53,30 @@ a future release, pull requests are welcome.
       Tests complete
         8 passing (61 ms)
 
+## Command Line Options
+
+The CLI is further configured with the following command line options:
+
+    Usage: rester [options] [command]
+
+    General Options:
+      -V, --version             Output the version number
+      -h, --help                Output usage information
+
+    Commands:
+      postman [options] <file>  Send test items from a postman export file
+
+    Postman Options:
+      -t, --test <name>         Send only named test
+
+## File Format
+
+This tools supports a file format with a minimal subset of the schema
+described here:
+
+[https://schema.getpostman.com/json/collection/v2.1.0/collection.json](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
+
 ## Tests
 
   `npm test`
