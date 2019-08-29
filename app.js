@@ -2,7 +2,6 @@
 
 const debug = require('debug')('rester:app');
 const async = require('async');
-const path = require('path');
 const request = require('superagent');
 const now = require('performance-now');
 
