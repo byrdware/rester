@@ -69,22 +69,98 @@ The CLI is further configured with the following command line options:
     Postman Options:
       -t, --test <name>         Send only named test
 
+## Getting Started
+
+```bash
+npm install '@byrdware/rester' -D
+mkdir rest
+$EDITOR rest/simple-rest.js
+```
+
+In your editor:
+
+```javascript
+module.exports = {
+  info: {
+    name: 'My Test Suite'
+  },
+  item: [{
+    name: 'Login',
+    request: {
+      method: 'POST',
+      header: [{
+        key: 'Content-Type',
+        value: 'application/json',
+      }],
+      body: {
+        raw: '{ "email": "nobody@nowhere.net", "password": "0123456789abcdef" }'
+      },
+      url: {
+        protocol: 'http',
+        host: [ 'localhost' ],
+        port: '80',
+        path: [ 'login' ]
+      }
+    }
+  }]
+};
+```
+
+Run tests from a shell:
+
+```bash
+$ ./node_modules/.bin/rester postman rest/simple-rest.js
+
+  Login
+    √ POST http://localhost:80/login
+
+  Tests complete
+    1 passing (283 ms)
+```
+
+Add a "rest" script to package.json:
+
+```javascript
+"scripts": {
+  "test": "mocha",
+  ...
+  "rest": "rester postman ./rest/simple-rest.js"
+}
+```
+
+Then run your tests with:
+
+```bash
+npm run rest
+```
+
 ## File Format
 
-This tools supports a file format with a minimal subset of the schema
+This tools currently supports a file format with a minimal subset of the schema
 described here:
 
 [https://schema.getpostman.com/json/collection/v2.1.0/collection.json](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 
-## Tests
+## Unit Testing the Rester Distribution
 
-  `npm test`
+Clone the github repository:
+
+```
+git clone https://github.com/byrdware/rester.git
+```
+
+and then:
+
+```
+npm test
+```
 
 or, alternatively:
 
-  `node test/www`
-  
-  `npm start`
+```
+node test/www
+npm start
+```
 
 ## Contributing
 
