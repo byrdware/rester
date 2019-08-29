@@ -4,11 +4,11 @@ REST API Test Runner
 
 ## Installation
 
-  `npm install @byrdware/rester`
+  `npm install -g @byrdware/rester`
 
 ## Usage
 
-    $ rester postman -t 'Test #1' ./rest/test-suite.json
+    $ rester postman [-t 'Test Name'] ./rest/test-suite.json
   
 ## Tests
 
