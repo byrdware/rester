@@ -1,0 +1,52 @@
+{
+  "name": "@byrdware/rester",
+  "version": "0.1.0",
+  "description": "CLI REST API Test Runner",
+  "main": "app.js",
+  "bin": {
+    "@byrdware/rester": "bin/rester",
+    "rester": "bin/rester"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engine": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "start": "node bin/rester postman ./test/test-suite.js",
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byrdware/rester.git"
+  },
+  "keywords": [
+    "cli",
+    "rester",
+    "rest",
+    "rest api",
+    "testing",
+    "unit testing"
+  ],
+  "author": "ByrdWare <support@byrdware.org> (https://github.com/byrdware)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/byrdware/rester/issues"
+  },
+  "homepage": "https://github.com/byrdware/rester#readme",
+  "dependencies": {
+    "async": "^3.1.0",
+    "commander": "^3.0.0",
+    "debug": "^4.1.1",
+    "performance-now": "^2.1.0",
+    "superagent": "^5.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "express": "~4.16.1",
+    "http-errors": "^1.7.3",
+    "uuid": "^3.3.3"
+  }
+}

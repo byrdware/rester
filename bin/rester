@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const debug = require('debug')('rester:cli');
+const path = require('path');
+const program = require('commander');
+const pkg = require('../package.json');
+const app = require('../app.js');
+
+program
+  .version(pkg.version)
+  .command('postman <file>')
+  .description('Send test items from a postman export file')
+  .option('-t, --test <name>', 'Send only named test')
+  .action((file, cmd) => {
+    debug(file);
+    debug(cmd);
+    var fileName = null;
+    if (file.match(/^\//) || file.match(/^[A-Za-z]:/)) {
+      fileName = file;
+    } else {
+      fileName = path.join(process.cwd(), file);
+    }
+    debug(fileName);
+    app.run(fileName, cmd.test, console.log, (err, results, elapsed) => {
+      if (err) {
+        console.error(`${err.name}: ${err.message}`);
+      } else {
+        console.log(
+          '\n  Tests complete\n',
+          `    ${results.success} passing (${elapsed} ms)\n`,
+          results.failure > 0 ? `    ${results.failure} failing\n` : ''
+        );
+      }
+      process.exit(0);
+    });
+  });
+
+program.parse(process.argv);
