@@ -31,8 +31,28 @@ a future release, pull requests are welcome.
 
 ## Usage
 
-    $ rester postman [-t 'Item Name'] ./rest/test-suite.json
-  
+    $ rester postman ./test/test-suite.js
+    
+      Login User
+        √ POST http://localhost:3369/user/login
+      Create Records
+        √ POST http://localhost:3369/create/
+      Retrieve All Records
+        √ GET http://localhost:3369/
+      Retrieve N Records
+        √ GET http://localhost:3369/10/
+      Search for Records
+        √ GET http://localhost:3369/search
+      Update Record
+        √ PUT http://localhost:3369/update/L1SEzUhTQ3WNPyKMO1vA
+      Delete Record
+        √ DELETE http://localhost:3369/delete/uLAkVuFVWvLN1OGp21RQ
+      Logout User
+        √ GET http://localhost:3369/user/logout
+
+      Tests complete
+        8 passing (61 ms)
+
 ## Tests
 
   `npm test`
