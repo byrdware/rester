@@ -2,6 +2,8 @@
 
 var { server } = require('./server.js');
 
+server.listen(3369);
+
 server.on('listening', () => {
   console.log('Server listening for requests');
 });
