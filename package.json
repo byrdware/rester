@@ -1,7 +1,7 @@
 {
   "name": "@byrdware/rester",
   "version": "0.1.0",
-  "description": "CLI REST API Test Runner",
+  "description": "REST API Test Runner",
   "main": "app.js",
   "bin": {
     "@byrdware/rester": "bin/rester",
