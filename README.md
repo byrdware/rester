@@ -5,6 +5,7 @@ REST API Test Runner
 [![NPM Version](https://badge.fury.io/js/%40byrdware%2Frester.svg)](https://www.npmjs.com/package/@byrdware/rester)
 [![Build Status](https://travis-ci.org/byrdware/rester.svg?branch=master)](https://travis-ci.org/byrdware/rester)
 [![Coverage Status](https://coveralls.io/repos/github/byrdware/rester/badge.svg?branch=master)](https://coveralls.io/github/byrdware/rester?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ## Synopsis
 
@@ -19,6 +20,10 @@ more thorough search is required, but no good tools have been found to easily
 and quickly automate a test script for checking and validating an API while
 under development. This project is an attempt to solve this problem by
 providing a simple tool, driven by an easily configured JSON/JavaScript file.
+
+Initially the format of this configuration file is simply a postman export
+file. I am currently reviewing Insomnia export files and planning support in
+a future release, pull requests are welcome.
 
 ## Installation
 
@@ -35,7 +40,3 @@ providing a simple tool, driven by an easily configured JSON/JavaScript file.
 ## Contributing
 
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
