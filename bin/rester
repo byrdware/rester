@@ -12,7 +12,7 @@ program
   .version(pkg.version)
   .command('postman <file>')
   .description('Send test items from a postman export file')
-  .option('-t, --test <name>', 'Send only named test')
+  .option('-t, --test <name>', 'send only named test item')
   .action((file, cmd) => {
     debug(file);
     debug(cmd);
@@ -27,6 +27,7 @@ program
       if (err) {
         console.error(`${err.name}: ${err.message}`);
       } else {
+        console.dir(typeof elapsed);
         console.log(
           '\n  Tests complete\n',
           `    ${results.success} passing (${elapsed} ms)\n`,
