@@ -27,7 +27,6 @@ program
       if (err) {
         console.error(`${err.name}: ${err.message}`);
       } else {
-        console.dir(typeof elapsed);
         console.log(
           '\n  Tests complete\n',
           `    ${results.success} passing (${elapsed} ms)\n`,
