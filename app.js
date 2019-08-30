@@ -18,20 +18,20 @@ class Rester {
     };
   }
 
-  // TODO: Refactor to allow partial matches, this is funky, and not good funky
+  // TODO: Refactor to allow partial name matches
   _substitute(vars, values) {
-    debug({vars: vars, values: values});
-    const count = values.length;
+    // debug({vars: vars, values: values});
     var newValues = [];
     if (!vars || !Object.keys(vars).length) {
       newValues = values;
-    } else if (values && typeof values === 'object' && Object.keys(values).length) {
+    } else if (typeof values === 'object' && Array.isArray(values)) {
+      const count = values.length;
       Object.keys(vars).forEach(key => {
         const re = new RegExp(`:${key}`, 'g');
-        debug({re: re});
+        // debug({re: re});
         for (var i = 0; i < count; i++) {
           debug({i: i, value: values[i], var: vars[key]});
-          if (typeof newValues[i] === 'undefined') {        
+          if (typeof newValues[i] === 'undefined') {
             const val = values[i].replace(re, vars[key]);
             newValues[i] = val;
             debug({added: newValues[i]});
@@ -110,12 +110,9 @@ class Rester {
     const headers = this._getHeaders(test.request.header);
     const query = this._getQuery(test.request.url.query);
     const body = this._getBody(test.request.body && test.request.body.raw ? test.request.body.raw : null);
-
     const { url } = test.request;
     const uri = `${url.protocol}://${url.host[0]}:${url.port}/${this._substitute(variables, url.path).join('/')}`;
-
     log && log(`  ${test.name}`);
-    
     request(test.request.method, uri)
       .timeout({
         response: 2000,
@@ -153,19 +150,15 @@ class Rester {
 
   run(fileName, testName, log, callback) {
     var test = null;
-
     try {
       test = require(fileName);
     } catch (ex) {
-      log(`${ex.name}: ${ex.message}`);
-      return false;
+      log && log(`${ex.name}: ${ex.message}`);
+      return callback(ex);
     }
-
     debug(test);
     this._results.name = test.info.name;
-
     const start = now();
-
     async.eachSeries(test.item, (item, itemDone) => {
       if (testName && testName.length && item.name !== testName) {
         itemDone();
@@ -176,10 +169,11 @@ class Rester {
       const elapsed = (now()-start).toFixed(0);
       callback(err, this._results, elapsed);
     });
-
-    return true;
   }
 
+  get results() {
+    return this._results;
+  }
 }
 
 module.exports = new Rester();
