@@ -136,7 +136,7 @@ npm run rest
 
 ## File Format
 
-This tools currently supports a file format with a minimal subset of the schema
+This tool currently supports a file format with a minimal subset of the schema
 described here:
 
 [https://schema.getpostman.com/json/collection/v2.1.0/collection.json](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
@@ -155,7 +155,7 @@ and then:
 npm test
 ```
 
-or, alternatively:
+or, alternately:
 
 ```
 node test/www
