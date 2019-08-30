@@ -18,12 +18,12 @@
           {
             "id": "pair_e14af2b20fb1496898e65e27ed9baa02",
             "name": "secret_key",
-            "value": "KFeT2FYBQPrlUytJWAYyIlDL6pwpaHlKS"
+            "value": "506099f3ae3d4011922fec5d765ac990"
           },
           {
             "id": "pair_3f90e383d19d45eeb890ee57fb27e820",
             "name": "site",
-            "value": "coe-test.mybizowie.com"
+            "value": "test.mybizowie.com"
           },
           {
             "fileName": "",
@@ -55,7 +55,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "https://coe-test.mybizowie.com/bz/api/fulfillment/get_fulfillments",
+      "url": "https://test.mybizowie.com/bz/api/fulfillment/get_fulfillments",
       "_type": "request"
     },
     {
@@ -81,12 +81,12 @@
           {
             "id": "pair_d08e082b595f46b8b510db776301550b",
             "name": "secret_key",
-            "value": "KFeT2FYBQPrlUytJWAYyIlDL6pwpaHlKS"
+            "value": "506099f3ae3d4011922fec5d765ac990"
           },
           {
             "id": "pair_8b80fb031e8f487387c054e8db433264",
             "name": "site",
-            "value": "coe-test.mybizowie.com"
+            "value": "test.mybizowie.com"
           },
           {
             "id": "pair_506099f3ae3d4011922fec5d765ac990",
@@ -116,7 +116,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "https://coe-test.mybizowie.com/bz/api/purchase_orders/get_po_lines",
+      "url": "https://test.mybizowie.com/bz/api/purchase_orders/get_po_lines",
       "_type": "request"
     },
     {
@@ -133,12 +133,12 @@
           {
             "id": "pair_d08e082b595f46b8b510db776301550b",
             "name": "secret_key",
-            "value": "KFeT2FYBQPrlUytJWAYyIlDL6pwpaHlKS"
+            "value": "506099f3ae3d4011922fec5d765ac990"
           },
           {
             "id": "pair_8b80fb031e8f487387c054e8db433264",
             "name": "site",
-            "value": "coe-test.mybizowie.com"
+            "value": "test.mybizowie.com"
           },
           {
             "id": "pair_506099f3ae3d4011922fec5d765ac990",
@@ -168,7 +168,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "https://coe-test.mybizowie.com/bz/api/fulfillment/get_transfer_lines",
+      "url": "https://test.mybizowie.com/bz/api/fulfillment/get_transfer_lines",
       "_type": "request"
     },
     {
@@ -185,12 +185,12 @@
           {
             "id": "pair_d08e082b595f46b8b510db776301550b",
             "name": "secret_key",
-            "value": "KFeT2FYBQPrlUytJWAYyIlDL6pwpaHlKS"
+            "value": "506099f3ae3d4011922fec5d765ac990"
           },
           {
             "id": "pair_8b80fb031e8f487387c054e8db433264",
             "name": "site",
-            "value": "coe-test.mybizowie.com"
+            "value": "test.mybizowie.com"
           },
           {
             "id": "pair_506099f3ae3d4011922fec5d765ac990",
@@ -220,7 +220,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "https://coe-test.mybizowie.com/bz/api/fulfillment/receive_transfer",
+      "url": "https://test.mybizowie.com/bz/api/fulfillment/receive_transfer",
       "_type": "request"
     },
     {
@@ -237,12 +237,12 @@
           {
             "id": "pair_d08e082b595f46b8b510db776301550b",
             "name": "secret_key",
-            "value": "KFeT2FYBQPrlUytJWAYyIlDL6pwpaHlKS"
+            "value": "506099f3ae3d4011922fec5d765ac990"
           },
           {
             "id": "pair_8b80fb031e8f487387c054e8db433264",
             "name": "site",
-            "value": "coe-test.mybizowie.com"
+            "value": "test.mybizowie.com"
           },
           {
             "id": "pair_506099f3ae3d4011922fec5d765ac990",
@@ -272,7 +272,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "https://coe-test.mybizowie.com/bz/api/purchase_orders/receive",
+      "url": "https://test.mybizowie.com/bz/api/purchase_orders/receive",
       "_type": "request"
     },
     {
