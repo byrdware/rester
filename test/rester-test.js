@@ -40,6 +40,34 @@ describe('Rester', function() {
     done();
   });
 
+  it('should gracefully handle empty or missing vars during substitution', function(done) {
+    const values = [':num',':str',':obj',':foo'];
+    const replaced = app._substitute(null, values);
+    expect(replaced[0]).to.equal(':num');
+    expect(replaced[1]).to.equal(':str');
+    expect(replaced[2]).to.equal(':obj');
+    expect(replaced[3]).to.equal(':foo');
+    done();
+  });
+
+  it('should gracefully handle empty or missing values during substitution', function(done) {
+    const vars = { num: 1, str: 'hello world', obj: { foo: 'bar' } };
+    const replaced = app._substitute(vars, null);
+    expect(replaced).to.be.an('array').and.to.be.empty;
+    done();
+  });
+
+  it('should gracefully handle partial matches during substitution', function(done) {
+    const vars = { num: 1, obj: { foo: 'bar' } };
+    const values = [':num',':str',':obj',':foo'];
+    const replaced = app._substitute(vars, values);
+    expect(replaced[0]).to.equal('1');
+    expect(replaced[1]).to.equal(':str');
+    expect(replaced[2]).to.equal('[object Object]');
+    expect(replaced[3]).to.equal(':foo');
+    done();
+  });
+
   it('should retrieve a variables object', function(done) {
     var vars = [{
       key: 'numResults',
@@ -61,9 +89,10 @@ describe('Rester', function() {
       type: 'text'
     },{
       key: 'x-access-token',
-      value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiY25AcGxhY2UuY29tIiwiZmlyc3ROYW1lIjoiQ2hhcmxlcyIsImxhc3ROYW1lIjoiTmVtb3kifSwiaWF0IjoxNTY2NTczMjAyLCJleHAiOjE1NjY1NzY4MDJ9.X81vTt4DsO5xtbxuMlY9QbtIJFbiTSBYR85_4ux3jjg',
+      value: null,
       type: 'text'
     }];
+    app._xAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiY25AcGxhY2UuY29tIiwiZmlyc3ROYW1lIjoiQ2hhcmxlcyIsImxhc3ROYW1lIjoiTmVtb3kifSwiaWF0IjoxNTY2NTczMjAyLCJleHAiOjE1NjY1NzY4MDJ9.X81vTt4DsO5xtbxuMlY9QbtIJFbiTSBYR85_4ux3jjg';
     const headers = app._getHeaders(hdrs);
     expect(headers['Content-Type']).to.equal('application/json');
     expect(headers['x-access-token']).to.equal('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiY25AcGxhY2UuY29tIiwiZmlyc3ROYW1lIjoiQ2hhcmxlcyIsImxhc3ROYW1lIjoiTmVtb3kifSwiaWF0IjoxNTY2NTczMjAyLCJleHAiOjE1NjY1NzY4MDJ9.X81vTt4DsO5xtbxuMlY9QbtIJFbiTSBYR85_4ux3jjg');
@@ -96,6 +125,16 @@ describe('Rester', function() {
     expect(body.books[0].numPages).to.equal(500);
     expect(body.books[0].pubDate).to.equal('Wed Nov 07 2018 15:43:54 GMT-0700 (Mountain Standard Time)');
     expect(body.books[0].cover).to.equal('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADSCAMAAABThmYtAAAAXVB');
+    done();
+  });
+
+  it('should gracefully recover from malformed body objects', function(done) {
+    var body = app._getBody('foo');
+    expect(body).to.be.empty;
+    body = app._getBody(undefined);
+    expect(body).to.be.empty;
+    body = app._getBody(this);
+    expect(body).to.be.empty;
     done();
   });
 
